@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/*Sets background colour of page */
+body {
+    background-color: #000000;
+}
+
+/*Removes bullets from nav list*/
+nav ul{
+    list-style-type: none;
+    color: white;
+}
+
+.heading {
+    color: white
+}
+
+.opener-text {
+    color: white
+}
