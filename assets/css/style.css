@@ -20,12 +20,37 @@ body {
 
 /*Removes bullets from nav list*/
 nav ul{
-    list-style-type: none;
     color: var(--light);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#highscores:hover {
+    color: var(--neongreen);
+    cursor: pointer;
+}
+
+#timer {
+    right: 0;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
 }
 
 .heading {
     color: var(--light);
+    margin: 20px;
 }
 
 .opener-text {
@@ -35,12 +60,21 @@ nav ul{
 /*Styles the start button*/
 button {
   background-color: var(--neongreen);
-  border: none;
+  border: 3px;
+  border-style: solid;
   color: var(--dark);
   padding: 15px 32px;
+  margin: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   font-weight: bolder;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--black);
+    border-color: var(--neongreen);
+    color: var(--neongreen);
 }
