@@ -4,7 +4,8 @@
     --light: white;
 }
 
-
+/*Sets global styling for page*/
+/*Have set font-family globally so everything looks like 'code'*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -31,6 +32,7 @@ nav ul{
     color: var(--light);
 }
 
+/*Styles the start button*/
 button {
   background-color: var(--neongreen);
   border: none;
