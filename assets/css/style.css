@@ -1,3 +1,10 @@
+:root {
+    --neongreen: #39FF14;
+    --dark: black;
+    --light: white;
+}
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,30 +13,31 @@
 
 /*Sets background colour of page */
 body {
-    background-color: #000000;
+    background-color: var(--dark);
 }
 
 /*Removes bullets from nav list*/
 nav ul{
     list-style-type: none;
-    color: white;
+    color: var(--light);
 }
 
 .heading {
-    color: white
+    color: var(--light);
 }
 
 .opener-text {
-    color: white
+    color: var(--light);
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: var(--neongreen);
   border: none;
-  color: white;
+  color: var(--dark);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight: bolder;
 }
