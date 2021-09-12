@@ -39,10 +39,6 @@ nav ul li{
     cursor: pointer;
 }
 
-#timer {
-    right: 0;
-}
-
 .container {
     text-align: center;
     margin-top: 50px;
