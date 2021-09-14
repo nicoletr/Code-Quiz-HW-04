@@ -1,16 +1,22 @@
 //variables to track
-indexofthequestion 
-time
+var startButton
+var timer
+var startPage
+var questionPage
+var questions
+
 
 //variables to get elements
-document.getlelementId
+document.getElementById
 
-starButton.onClick = beginQuiz
+startButton.onClick = beginQuiz();
+
 
 function beginQuiz(){
 	//hide the start screen
 	//unhide the question section
 	//start timer in JS
 	//showing timer in html
-	
 }
+
+function nextQuestion();
