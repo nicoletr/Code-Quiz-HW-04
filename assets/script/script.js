@@ -44,14 +44,17 @@ startButton.onClick = beginQuiz();
 
 //TODO:
 function beginQuiz(){
-	//hide the start screen
+	startPage.style.display = "none";
+	question1.style.display = "";
 	//unhide the question section
 	//start timer in JS
 	//showing timer in html
 }
 
 //TODO:
-function nextQuestion();
+function nextQuestion(){
+	
+};
 
 //TODO: Timer Function
 
