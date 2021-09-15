@@ -44,7 +44,7 @@ nav ul li{
     margin-top: 50px;
 }
 
-.heading {
+h1 {
     color: var(--light);
     margin: 20px;
 }
