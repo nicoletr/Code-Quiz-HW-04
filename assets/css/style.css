@@ -53,7 +53,7 @@ h1 {
     color: var(--light);
 }
 
-/*Styles the start button*/
+/*Styles the buttons*/
 button {
   background-color: var(--neongreen);
   border: 3px;
