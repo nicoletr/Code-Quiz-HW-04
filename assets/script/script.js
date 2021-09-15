@@ -5,22 +5,6 @@ var startPage
 var questionPage
 var questions
 
-
-//variables to get elements
-document.getElementById
-
-startButton.onClick = beginQuiz();
-
-
-function beginQuiz(){
-	//hide the start screen
-	//unhide the question section
-	//start timer in JS
-	//showing timer in html
-}
-
-function nextQuestion();
-
 //Variables
 var timeLeft = document.getElementById("timer")
 var startButton = document.getElementById("start-button")
@@ -53,3 +37,35 @@ var question6Wrong = document.getElementById("question6-wrong")
 var endPage = document.getElementById("end-page")
 
 var highscoresPage = document.getElementById("highscores-page")
+
+
+//TODO:
+startButton.onClick = beginQuiz();
+
+//TODO:
+function beginQuiz(){
+	//hide the start screen
+	//unhide the question section
+	//start timer in JS
+	//showing timer in html
+}
+
+//TODO:
+function nextQuestion();
+
+//TODO: Timer Function
+
+//TODO: Function for question pages
+	//When an answer is chosen move to next question
+	//When a correct answer is chosen - display 'Correct!' at bottom of page and save to local storage
+	//When in incorrect answer is chosen - display 'Wrong!' at bottom of page and deduct 10sec from timer
+
+//TODO: Function when quiz is finished
+	//Finish quiz when time is up
+	//Finish quiz when no questions left
+	//When quiz is finished, hide question page
+	//When quiz is finished, show end page?
+
+//TODO: Event listener for 'View Highscores' button
+	//Hide current page
+	//Unhide highscores page
