@@ -11,7 +11,7 @@ Unfortunately this week I was very short on time due to a family issue. I wanted
 <br>
 
 # Screenshot
-
+![Screenshot of the code quiz page](./assets/images/screenshot.png)
 
 # Links
 GitHub Repo: https://github.com/nicoletr/Code-Quiz-HW-04 <br>
