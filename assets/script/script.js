@@ -43,13 +43,13 @@ var highscoresPage = document.getElementById("highscores-page")
 startButton.onClick = beginQuiz();
 
 //TODO:
-function beginQuiz(){
+function beginQuiz() {
 	startPage.style.display = "none";
-	question1.style.display = "";
+	question1.style.display = "block";
 	//unhide the question section
 	//start timer in JS
 	//showing timer in html
-}
+};
 
 //TODO:
 function nextQuestion(){
