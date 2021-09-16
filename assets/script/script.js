@@ -1,14 +1,14 @@
 //variables to track
 var startButton
-var timer
+var timerEl
 var startPage
 var questionPage
 var questions
 
 //Variables
-var timeLeft = document.getElementById("timer")
+var timerEl = document.getElementById("timer")
 var startButton = document.getElementById("start-button")
-var startPage = document.getElementById("start-page")
+var startPage = document.querySelector(".start-page")
 
 var question1 = document.getElementById("question-1")
 var question1Correct = document.getElementById("question1-correct")
@@ -39,19 +39,44 @@ var endPage = document.getElementById("end-page")
 var highscoresPage = document.getElementById("highscores-page")
 
 
-//TODO:
-startButton.onClick = beginQuiz();
+//When button is clicked, beginQuiz function will run
+startButton.addEventListener("click", beginQuiz);
 
-//TODO:
+//Starts the Quiz by hiding the start page and showing question 1
 function beginQuiz() {
+
 	startPage.style.display = "none";
-	question1.style.display = "block";
-	//unhide the question section
-	//start timer in JS
-	//showing timer in html
+	question1.setAttribute = ("style", "display:block");
+
+	countdown();
 };
 
-//TODO:
+//Timer countdown function
+function countdown() {
+	var timeLeft = 90;
+  
+	// Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+	var timeInterval = setInterval(function () {
+	  // As long as the `timeLeft` is greater than 1
+	  if (timeLeft > 1) {
+		// Set the `textContent` of `timerEl` to show the remaining seconds
+		timerEl.textContent = "Time:" + timeLeft;
+		// Decrement `timeLeft` by 1
+		timeLeft--;
+	  } else if (timeLeft === 1) {
+		// When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+		timerEl.textContent = "Time:" + timeLeft;
+		timeLeft--;
+	  } else {
+		// Once `timeLeft` gets to 0, set `timerEl` to an empty string
+		timerEl.textContent = '0';
+		// Use `clearInterval()` to stop the timer
+		clearInterval(timeInterval);
+	  }
+	}, 1000);
+  }
+
+//TODO: This will show the next question once answer for previous question is clicked
 function nextQuestion(){
 	
 };
