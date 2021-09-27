@@ -13,26 +13,29 @@
     <nav>
         <ul>
             <li id="highscores">View Highscores</li>
-            <li id="timer">Time:0</li>
+            <li id="timer">Time:<span id="timer-text"></span></li>
         </ul>
     </nav>
-    
-<!--Make this section 'visible' to begin with-->
-    <div id="start" class="container" style = display:block>
+
+<!--Start page is visible until the start quiz button is pressed-->
+    <div id="start-page" class="container visible">
         <h1>Coding Quiz Challenge</h1>
         <div class="opener-text">
             Try to answer the following code-related questions within the time limit. <br>
-            Keep in mind that incorrect answers will penalize your time by 10 seconds!
+            Any incorrect answers will penalize your time by 10 seconds!
         </div>
         <button id="start-button">Start Quiz</button>
     </div>
-    <div>
-        <h1 i></h1>
-    <div></div>
-    </div>
 
-<!--Make this section 'hidden' to begin with-->
-    <div class = "highscores">
+<!--Question page is hidden until start button is pressed-->
+    <div id="question-page" class="container invisible">
+        <h1 id=question></h1>
+        <div>
+         <button id="answer-one"></button>
+         <button id="answer-two"></button>
+         <button id="answer-three"></button>
+         <button id="answer-four"></button>
+        </div>
     </div>
 
     <script src= "./assets/script/script.js"></script>

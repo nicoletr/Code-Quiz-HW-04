@@ -3,42 +3,23 @@ var startButton
 var timerEl
 var startPage
 var questionPage
-var questions
+var question
 
 //Variables
-var timerEl = document.getElementById("timer")
-var startButton = document.getElementById("start-button")
-var startPage = document.querySelector("#start")
+var timerEl = document.getElementById("timer");
+var timerText = document.getElementById("timer-text");
+var startButton = document.getElementById("start-button");
+var startPage = document.getElementById("start-page");
+var endPage = document.getElementById("end-page");
+var questionPage = document.getElementById("question-page");
+var questionEl = document.getElementById("question");
+var answerOne = document.getElementById("answer-one");
+var answerTwo = document.getElementById("answer-two");
+var answerThree = document.getElementById("answer-three");
+var answerFour = document.getElementById("answer-four");
+var highscoresPage = document.getElementById("highscores-page");
 
-var question1 = document.getElementById("question-1")
-var question1Correct = document.getElementById("question1-correct")
-var question1Wrong = document.getElementById("question1-wrong")
-
-var question2 = document.getElementById("question-2")
-var question2Correct = document.getElementById("question2-correct")
-var question2Wrong = document.getElementById("question2-wrong")
-
-var question3 = document.getElementById("question-3")
-var question3Correct = document.getElementById("question3-correct")
-var question3Wrong = document.getElementById("question3-wrong")
-
-var question4 = document.getElementById("question-4")
-var question4Correct = document.getElementById("question4-correct")
-var question4Wrong = document.getElementById("question4-wrong")
-
-var question5 = document.getElementById("question-5")
-var question5Correct = document.getElementById("question5-correct")
-var question5Wrong = document.getElementById("question5-wrong")
-
-var question6 = document.getElementById("question-6")
-var question6Correct = document.getElementById("question6-correct")
-var question6Wrong = document.getElementById("question6-wrong")
-
-var endPage = document.getElementById("end-page")
-
-var highscoresPage = document.getElementById("highscores-page")
-
-var timeleft = 60;
+var timeLeft = 90;
 
 var questions = [
     {
@@ -74,17 +55,21 @@ var questions = [
 
 ];
 
+console.log(startPage.classList)
+
 //When button is clicked, beginQuiz function will run
 startButton.addEventListener("click", beginQuiz);
 
 //Starts the Quiz by hiding the start page and showing question 1
 function beginQuiz() {
 
-	startPage.setAttribute("class", "invisible");
-	question1.setAttribute = ("style", "display:block");
+	startPage.classList.add("invisible");
+	startPage.classList.remove("visible");
+	questionEl.classList.add("visible");
+	questionEl.classList.remove("invisible");
 
 	countdown();
-	displayquestions()
+	renderQuestions();
 };
 
 //Timer countdown function
@@ -119,11 +104,10 @@ function countdown() {
   }
 
 //TODO: This will show the next question once answer for previous question is clicked
-function nextQuestion(){
+function renderQuestions(){
 	
 };
 
-//TODO: Timer Function
 
 //TODO: Function for question pages
 	//When an answer is chosen move to next question

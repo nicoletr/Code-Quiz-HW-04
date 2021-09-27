@@ -48,10 +48,12 @@ h1 {
     color: var(--light);
     margin: 20px;
 }
+
 .invisible{
     display: none;
 }
-.visbile{
+
+.visible{
     display: block
 }
 
