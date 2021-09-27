@@ -8,7 +8,7 @@ var questions
 //Variables
 var timerEl = document.getElementById("timer")
 var startButton = document.getElementById("start-button")
-var startPage = document.querySelector(".start-page")
+var startPage = document.querySelector("#start")
 
 var question1 = document.getElementById("question-1")
 var question1Correct = document.getElementById("question1-correct")
@@ -38,6 +38,41 @@ var endPage = document.getElementById("end-page")
 
 var highscoresPage = document.getElementById("highscores-page")
 
+var timeleft = 60;
+
+var questions = [
+    {
+        question: "The condition of an if/else statement is enclosed within:",
+        answers: ["Parentheses", "Quotes", "Square Brackets", "Curly Brackets"],
+        correctAnswer: 0
+    },
+    {     
+        question: "Commonly used data types do NOT include:",
+        answers: ["Strings", "Boolean", "Alerts", "Numbers"],
+        correctAnswer: 2
+    },
+    {     
+        question: "Arrays in JavaScript can be used to store:",
+        answers: ["Booleans", "Other Arrays", "Numbers and Strings", "All of the above"],
+        correctAnswer: 3
+    },
+    {     
+        question: "When assigning to variables, string values must be enclosed within:",
+        answers: ["Commas", "Quotes", "Curly Brackets", "Parentheses"],
+        correctAnswer: 1
+    },
+    {     
+        question: "JavaScript is the same as Java",
+        answers: ["True", "False"],
+        correctAnswer: 1
+    },
+    {     
+        question: "Which is a useful tool for printing content to the debugger?",
+        answers: ["Terminal/Bash", "JavaScript", "Console log", "For loop"],
+        correctAnswer: 2
+    },
+
+];
 
 //When button is clicked, beginQuiz function will run
 startButton.addEventListener("click", beginQuiz);
@@ -45,15 +80,16 @@ startButton.addEventListener("click", beginQuiz);
 //Starts the Quiz by hiding the start page and showing question 1
 function beginQuiz() {
 
-	startPage.style.display = "none";
+	startPage.setAttribute("class", "invisible");
 	question1.setAttribute = ("style", "display:block");
 
 	countdown();
+	displayquestions()
 };
 
 //Timer countdown function
 function countdown() {
-	var timeLeft = 90;
+   timerEl.textContent = "Time:" + timeLeft;
   
 	// Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
 	var timeInterval = setInterval(function () {
@@ -71,7 +107,13 @@ function countdown() {
 		// Once `timeLeft` gets to 0, set `timerEl` to an empty string
 		timerEl.textContent = '0';
 		// Use `clearInterval()` to stop the timer
-		clearInterval(timeInterval);
+		timeLeft--		
+		timerEl.textContent = "Time:" + timeLeft;
+		
+		if (timeLeft<0){
+			clearInterval(timeInterval);
+		}
+		
 	  }
 	}, 1000);
   }

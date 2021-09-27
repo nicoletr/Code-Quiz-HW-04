@@ -48,6 +48,12 @@ h1 {
     color: var(--light);
     margin: 20px;
 }
+.invisible{
+    display: none;
+}
+.visbile{
+    display: block
+}
 
 .opener-text {
     color: var(--light);
