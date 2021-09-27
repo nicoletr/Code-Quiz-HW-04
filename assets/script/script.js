@@ -55,8 +55,6 @@ var questions = [
 
 ];
 
-console.log(startPage.classList)
-
 //When button is clicked, beginQuiz function will run
 startButton.addEventListener("click", beginQuiz);
 
@@ -74,26 +72,25 @@ function beginQuiz() {
 
 //Timer countdown function
 function countdown() {
-   timerEl.textContent = "Time:" + timeLeft;
   
 	// Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
 	var timeInterval = setInterval(function () {
 	  // As long as the `timeLeft` is greater than 1
 	  if (timeLeft > 1) {
 		// Set the `textContent` of `timerEl` to show the remaining seconds
-		timerEl.textContent = "Time:" + timeLeft;
+		timerText.textContent = "Time:" + timeLeft;
 		// Decrement `timeLeft` by 1
 		timeLeft--;
 	  } else if (timeLeft === 1) {
 		// When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-		timerEl.textContent = "Time:" + timeLeft;
+		timerText.textContent = "Time:" + timeLeft;
 		timeLeft--;
 	  } else {
 		// Once `timeLeft` gets to 0, set `timerEl` to an empty string
-		timerEl.textContent = '0';
+		timerText.textContent = '0';
 		// Use `clearInterval()` to stop the timer
 		timeLeft--		
-		timerEl.textContent = "Time:" + timeLeft;
+		timerText.textContent = "";
 		
 		if (timeLeft<0){
 			clearInterval(timeInterval);
@@ -103,13 +100,14 @@ function countdown() {
 	}, 1000);
   }
 
-//TODO: This will show the next question once answer for previous question is clicked
+//TODO: This will render each question to the question page
 function renderQuestions(){
 	
 };
 
 
 //TODO: Function for question pages
+	//Event listener on answer buttons - event.target to listen where the click occured
 	//When an answer is chosen move to next question
 	//When a correct answer is chosen - display 'Correct!' at bottom of page and save to local storage
 	//When in incorrect answer is chosen - display 'Wrong!' at bottom of page and deduct 10sec from timer
