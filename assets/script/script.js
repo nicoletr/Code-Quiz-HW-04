@@ -63,8 +63,8 @@ function beginQuiz() {
 
 	startPage.classList.add("invisible");
 	startPage.classList.remove("visible");
-	questionEl.classList.add("visible");
-	questionEl.classList.remove("invisible");
+	questionPage.classList.add("visible");
+	questionPage.classList.remove("invisible");
 
 	countdown();
 	renderQuestions();
@@ -75,34 +75,23 @@ function countdown() {
   
 	// Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
 	var timeInterval = setInterval(function () {
-	  // As long as the `timeLeft` is greater than 1
-	  if (timeLeft > 1) {
-		// Set the `textContent` of `timerEl` to show the remaining seconds
-		timerText.textContent = "Time:" + timeLeft;
-		// Decrement `timeLeft` by 1
+		timerText.textContent = " " + timeLeft;
 		timeLeft--;
-	  } else if (timeLeft === 1) {
-		// When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-		timerText.textContent = "Time:" + timeLeft;
-		timeLeft--;
-	  } else {
-		// Once `timeLeft` gets to 0, set `timerEl` to an empty string
-		timerText.textContent = '0';
-		// Use `clearInterval()` to stop the timer
-		timeLeft--		
+		// If time is less than 0, clear interval and clear timerText
+				if (timeLeft<0){
+		clearInterval(timeInterval);
 		timerText.textContent = "";
-		
-		if (timeLeft<0){
-			clearInterval(timeInterval);
 		}
-		
-	  }
 	}, 1000);
   }
 
 //TODO: This will render each question to the question page
 function renderQuestions(){
-	
+	questionEl.textContent = questions[0].question;
+	answerOne.textContent = questions[0].answers[0];
+	answerTwo.textContent = questions[0].answers[1];
+	answerThree.textContent = questions[0].answers[2];
+	answerFour.textContent = questions[0].answers[3];
 };
 
 
