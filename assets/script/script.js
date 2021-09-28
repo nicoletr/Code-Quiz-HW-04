@@ -13,11 +13,14 @@ var startPage = document.getElementById("start-page");
 var endPage = document.getElementById("end-page");
 var questionPage = document.getElementById("question-page");
 var questionEl = document.getElementById("question");
+var answers = document.getElementById("answers");
 var answerOne = document.getElementById("answer-one");
 var answerTwo = document.getElementById("answer-two");
 var answerThree = document.getElementById("answer-three");
 var answerFour = document.getElementById("answer-four");
 var highscoresPage = document.getElementById("highscores-page");
+var questionIndex = 0;
+var message = document.getElementById("message");
 
 var timeLeft = 90;
 
@@ -81,18 +84,75 @@ function countdown() {
 				if (timeLeft<0){
 		clearInterval(timeInterval);
 		timerText.textContent = "";
+		endQuiz();
 		}
 	}, 1000);
   }
 
 //TODO: This will render each question to the question page
 function renderQuestions(){
-	questionEl.textContent = questions[0].question;
-	answerOne.textContent = questions[0].answers[0];
-	answerTwo.textContent = questions[0].answers[1];
-	answerThree.textContent = questions[0].answers[2];
-	answerFour.textContent = questions[0].answers[3];
+	questionEl.textContent = questions[questionIndex].question;
+	answers.innerHTML = "";
+	for (var i=0; i<questions[questionIndex].answers.length; i++){
+		console.log(i);
+		var answerButton = document.createElement("button");
+		answerButton.setAttribute("class", "option");
+		answerButton.setAttribute("value", i)
+		answerButton.textContent = questions[questionIndex].answers[i];
+		answers.appendChild(answerButton);
+		answerButton.onclick = answerClick 
+	}
+
 };
+
+function answerClick() {
+	if(questions[questionIndex].correctAnswer == this.value){
+		console.log("correct");
+		message.textContent = "Correct!";
+	} else {
+		message.textContent = "Incorrect";
+		timeLeft-=10;
+		timerText.textContent = timeLeft;
+		if (timeLeft<0){
+			clearInterval(timeInterval);
+			timerText.textContent = "";
+			endQuiz();
+		}
+	} 
+	questionIndex++;
+	if (questionIndex == questions.length) {
+		endQuiz();
+	} else {
+		renderQuestions();
+	}
+	//Check if answer is correct
+	//If answer is correct, show 'correct' message
+	//If answer is incorrect, show 'wrong' messge and reduce time
+	//Increase questionIndex by 1
+	//Render next question
+	//If index is = qustion length run endQuiz function
+}
+
+function endQuiz(){
+	console.log ("endQuiz");
+	//Stop the timer
+	//Hide the question page - adding invisible class
+	//Show the end page - add visible class
+
+}
+
+//Event listener for submitting highscore
+
+function saveHighscore(){
+	//Array called highScores
+	//input initial
+	var score = {
+		initials: intials,
+		score: timeLeft
+	}
+	highScores.push(score)
+	//Save input to local storage with initial as key highscore, timescore is value
+}
 
 function nextQuestion(event){
 	var chosenAnswer = event.target

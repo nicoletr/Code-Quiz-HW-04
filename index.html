@@ -31,11 +31,17 @@
     <div id="question-page" class="container invisible">
         <h1 id=question></h1>
         <div id="answers">
-            <button id="answer-one"></button>
-            <button id="answer-two"></button>
-            <button id="answer-three"></button>
-            <button id="answer-four"></button>
+            
         </div>
+        <div id="message"></div>
+    </div>
+<!--End page is invisible until the quiz has ended-->
+    <div id="end-page" class="container invisible">
+        <h1>Game Over</h1>
+        <form id="user-details">
+            <label for="initals">Your Initials</label><br>
+            <input type="text" id="initials">
+        </form>
     </div>
 
     <script src= "./assets/script/script.js"></script>
