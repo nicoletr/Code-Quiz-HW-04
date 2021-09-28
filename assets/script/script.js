@@ -94,7 +94,11 @@ function renderQuestions(){
 	answerFour.textContent = questions[0].answers[3];
 };
 
+function nextQuestion(event){
+	var chosenAnswer = event.target
 
+	if (chosenAnswer ) {}
+}
 //TODO: Function for question pages
 	//Event listener on answer buttons - event.target to listen where the click occured
 	//When an answer is chosen move to next question
