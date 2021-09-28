@@ -68,6 +68,19 @@ footer {
     padding: 20px;
 }
 
+#initials {
+    color: var(--dark);
+}
+
+#score-text {
+    padding: 10px;
+}
+
+#user-score {
+    color: var(--neongreen);
+    font-weight: bold;
+}
+
 /*Styles the buttons*/
 button {
   background-color: var(--neongreen);
